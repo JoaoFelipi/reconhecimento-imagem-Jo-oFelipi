@@ -1,20 +1,20 @@
 def é_primo(numero: int) -> bool:
-    """
-    Verifica se um número é primo.
+    """Verifica se um número é primo.
 
-    Um número primo é um inteiro maior que 1 que possui
-    apenas dois divisores: 1 e ele mesmo.
+    Um número primo é um inteiro maior que 1 que possui apenas dois
+    divisores positivos: 1 e ele mesmo.
 
     Args:
         numero: Número inteiro a ser verificado.
 
     Returns:
-        bool: True se o número é primo, False caso contrário.
+        bool: True se o número for primo, False caso contrário.
 
     Raises:
-        TypeError: Se o número não for um inteiro.
+        TypeError: Se o argumento 'numero' não for um inteiro.
+        ValueError: Se o número for menor que 2.
 
-    Exemplos:
+    Example:
         >>> é_primo(2)
         True
         >>> é_primo(17)

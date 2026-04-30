@@ -21,14 +21,17 @@ total_item1 = qtd1 * item1
 total_item2 = qtd2 * item2
 total_item3 = qtd3 * item3
 
+# Soma individual para calcular subtotal antes de impostos
 subtotal = total_item1 + total_item2 + total_item3
-imposto = subtotal * 0.10
+imposto = subtotal * 0.10  # 10% sobre o subtotal (ICMS padrão)
 
 # DESCONTO
+# Aplica desconto sobre o subtotal, antes do imposto (desconto base)
 desconto_cupom = float(input("Você tem um cupom de desconto? (Digite o percentual ou 0): "))
 desconto = subtotal * (desconto_cupom / 100)
 
 # TOTAL FINAL
+# Ordem: subtotal + imposto - desconto (desconto incide sobre base tributável)
 total = subtotal + imposto - desconto
 
 # EXIBIÇÃO
@@ -45,6 +48,7 @@ print(separador)
 print(f" Subtotal:      R$ {subtotal:.2f}")
 print(f" Imposto (10%): R$ {imposto:.2f}")
 
+# Só exibe linha de desconto se houver cupom válido
 if desconto_cupom > 0:
     print(f" Desconto ({desconto_cupom:.0f}%): -R$ {desconto:.2f}")
 
